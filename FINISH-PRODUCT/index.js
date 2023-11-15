@@ -32,7 +32,6 @@ function sumOfPowersOf2(n) {
   return sum;
 }
 
-// Prompt the user for input
 const n = parseInt(prompt("Enter a nonnegative integer: "));
 
 if (!isNaN(n) && n >= 0) {
@@ -40,7 +39,7 @@ if (!isNaN(n) && n >= 0) {
   console.log(result);
 }
 
-// 8-------------------------------------------------------------------------------------------------
+// 8-----------------------------------------------------------------------------------------------------
 console.log('8. Write a program that reverses an input number.')
 
 
@@ -51,7 +50,7 @@ const reversedNum = i =>
 console.log(reversedNum(i))
 
 
-// 10--------------------------------------------------------------------------------------------------------
+// 10-----------------------------------------------------------------------------------------------------
 console.log('10. Given the value of n from the user, write a program that will display the first n even numbers. ')
 
 function displayEvenNumbers(n) {
@@ -74,7 +73,7 @@ const n = prompt("Enter a value: ");
 displayEvenNumbers(parseInt(n));
 
 
-// 11-------------------------------------------------------------------------------------------------
+// 11-----------------------------------------------------------------------------------------------------
 console.log('11. Write a program that accepts a number n and displays the sum of even numbers and the sum of odd numbers from 1 to n.')
 
 function sumOfEvenAndOddNumbers(n) {
@@ -98,3 +97,11 @@ function sumOfEvenAndOddNumbers(n) {
 
 const n = prompt("Enter a number (n):");
 sumOfEvenAndOddNumbers(parseInt(n));
+
+// 15-----------------------------------------------------------------------------------------------------
+console.log('15. Write a program that will display the following: 4, 8, 12, 16, ..., 496')
+
+for (let i = 4; i <= 496; i += 4) {
+  console.log(' ' + i);
+};
+ 

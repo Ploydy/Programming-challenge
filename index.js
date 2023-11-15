@@ -57,7 +57,7 @@ createVShape(victoryOutput);
 */
 
 // 7--------------------------------------------------------------------------------
-console.log('7.  Write a program to display all combinations of A and B (from 1 to 100) that will make the expression false: (5 * A)-(3 * B) > 30 ')
+console.log('7. Write a program to display all combinations of A and B (from 1 to 100) that will make the expression false: (5 * A)-(3 * B) > 30 ')
 /* 
 for (let A = 1; A <= 100; A++) {
   for (let B = 1; B <= 100; B++) {
@@ -128,13 +128,7 @@ if (isNaN(a) || isNaN(x)) {
 
 // 14--------------------------------------------------------------------------------------------
 
-// 15---------------------------------------------------------------------
-console.log('15. Write a program that will display the following: 4, 8, 12, 16, ..., 496')
-/* 
-for (let i = 4; i <= 496; i += 4) {
-  console.log(' ' + i);
-};
- */
+
 // 16-------------------------------------------------------------------------
 // 17------------------------------------------------------------------------
 console.log('17. Write a program that will ask the user to enter 10 numbers and display the largest number entered.')
