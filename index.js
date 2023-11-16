@@ -2,6 +2,27 @@ import createPrompt from 'prompt-sync';
 
 let prompt = createPrompt();
 
+// 69. create a program to total the work that is done and how many are left 
+const myArray =
+  [
+    1, 2, 3, 8, 10, 11, 15,
+    6, 7, 17, 18, 22,
+  ];
+// submitted 7 items (15) 
+const numbersNotInArray = [];
+
+for (let i = 1; i <= 49; i++) {
+  if (!myArray.includes(i)) {
+    numbersNotInArray.push(i);
+  }
+}
+
+const totalNumbersLeft = numbersNotInArray.length;
+const totalOfAlreadyDone = myArray.length;
+
+console.log('Numbers not present in the array:', numbersNotInArray);
+console.log('Total of already finish:', totalOfAlreadyDone);
+console.log('Total items left :', totalNumbersLeft);
 
 // 4------------------------------------------------------------------------
 //console.log('4. Write a program that will compute for the following given n & x:');
@@ -12,16 +33,16 @@ console.log('5. Given an input n assumed one-digit, display a pattern. ex. if n 
 /* 
 const pyramidOutput = (prompt("Enter a number to make pyramid: "));
 function createPyramidPattern(height) {
-  for (let i = 1; i <= height; i++) {
-      let line = '';
+  for (let i = 1; i <= height; i++) { // controls the number of rows in the pyramid base in te heigth parameter
+      let line = ''; // this line initialize as an empty string for each row
 
       // Add spaces before the numbers
-      for (let space = 1; space <= height - i; space++) {
+      for (let space = 1; space <= height - i; space++) { // this line is to add spaces before the numbers of each rows for the pyramid shape
           line += '  ';
       }
 
       // Add numbers and underscores
-      for (let num = 1; num <= i; num++) {
+      for (let num = 1; num <= i; num++) { // this line adds number and underscores in a sequence to form the pyramid pattern
           line += num;
           if (num < i) {
               line += '_';
@@ -34,42 +55,14 @@ function createPyramidPattern(height) {
 
 createPyramidPattern(pyramidOutput);
  */
-// 6--------------------------------------------------------------------------------------------
-console.log('6. Write a program that will display a pattern depending on the value of n entered by the user.')
-/* 
-const victoryOutput = (prompt("Enter a number to make v shape: "));
 
-function createVShape(height) {
-  for (let i = 1; i <= height; i++) {
-    let line = '';
-    for (let j = 1; j <= height * 2 - 1; j++) {
-      if (j === i || j === height * 2 - i || i === height) {
-        line += '*';
-      } else {
-        line += ' ';
-      }
-    }
-    console.log(line);
-  }
-}
 
-createVShape(victoryOutput);
-*/
 
-// 7--------------------------------------------------------------------------------
-console.log('7. Write a program to display all combinations of A and B (from 1 to 100) that will make the expression false: (5 * A)-(3 * B) > 30 ')
-/* 
-for (let A = 1; A <= 100; A++) {
-  for (let B = 1; B <= 100; B++) {
-    if ((5 * A) - (3 * B) <= 30) {
-      console.log(`A=${A}, B=${B} => (5 * ${A}) - (3 * ${B}) = ${(5 * A) - (3 * B)}`);
-    }
-  }
-}
-*/
+
 
 // 9-------------------------------------- --------------------------------------------------------------
 console.log('9. Write a program that gets as input a binary number and outputs its corresponding decimal equivalent. Declare your integer variables as long. A long declaration accommodates 8 digits for a number.')
+
 /* 
 function binaryToDecimal(binary) {
   // Ensure that the binary input is no longer than 8 characters
@@ -77,25 +70,23 @@ function binaryToDecimal(binary) {
     return "Binary number is too long. Maximum length is 8 characters.";
   }
 
-  let decimal = 0;
+  let decimal = 0; // initialize a variable decimal to store the decimal equivalent of binary number, This variable starts at 0
 
-  for (let i = binary.length - 1, power = 0; i >= 0; i--, power++) {
-    const digit = parseInt(binary[i]);
-    decimal += digit * Math.pow(2, power);
+  for (let i = binary.length - 1, power = 0; i >= 0; i--, power++) { // initializes the loop index i to the last digit || 'power = 0' initializes a power variable to keep track of the power of 2 for each binary digit || the loop continous  as long as i is greater than or equal to 0, decrementing i each time
+    const digit = parseInt(binary[i]); // this digit represents 0 or 1
+    decimal += digit * Math.pow(2, power); // calculates the decimal value by multiplying the current binary digit with 2 raised to the power of its position from the right
   }
 
-  return decimal;
+  return decimal; // once all digits have been processed the function returns the calculated decimal equivalent of the binary number
 }
-const binaryNumber = prompt('binary input: ')
-const decimalEquivalent = binaryToDecimal(binaryNumber);
-console.log(`Decimal equivalent is: ${decimalEquivalent}`);
+const binaryNumber = prompt('binary input: ') // this line is to get the user to input a binary number and store the input as binaryNumber
+const decimalEquivalent = binaryToDecimal(binaryNumber); // calls the binarytodecimal function and passes the user provided binarynumber as an argument to calculate its decimal equivalent
+console.log(`Decimal equivalent is: ${decimalEquivalent}`); // finally the calculated decimal equivalent to the console log to display the result
 */
 
 
-
- 
 // 12
-console.log('12. Write a program that will compute for axgiven real value a and positive integer x')
+console.log('12. Write a program that will compute for ax given real value a and positive integer x')
 
 /* 
 function computePower(a, x) {
@@ -130,83 +121,12 @@ if (isNaN(a) || isNaN(x)) {
 
 
 // 16-------------------------------------------------------------------------
-// 17------------------------------------------------------------------------
-console.log('17. Write a program that will ask the user to enter 10 numbers and display the largest number entered.')
-/* 
-const num1 = parseFloat(prompt("Enter first number: "));
-const num2 = parseFloat(prompt("Enter second number: "));
-let largest;
 
-if (num1 >= num2){
-  largest = num1;
-} else {
-  largest = num2
-}
-
-console.log("The largest number is " + largest);
- */
-// 18-----------------------------------------------------------------------------------
-console.log('18. Write a program that will ask the user to enter 100 numbers and display on the screen the highest and lowest of these numbers. ')
-/*
-const num1 = parseFloat(prompt("Enter first number: "));
-const num2 = parseFloat(prompt("Enter second number: "));
-const num3 = parseFloat(prompt("Enter third number: "));
-let smallest;
-let largest;
-
-if (num1 >= num2 && num1 >= num3) {
-    largest = num1;
-} else if (num2 >= num1 && num2 >= num3) {
-    largest = num2;
-} else {
-    largest = num3;
-}
-
-if (num1 <= num2 && num1 <= num3) {
-  smallest = num1;
-} else if (num2 <= num1 && num2 <= num3) {
-  smallest = num2;
-} else {
-  smallest = num3;
-}
-
-console.log('the smallest number is ' + smallest);
-console.log('The largest number is ' + largest);
-*/
 
 // 19
 // 20
 // 21
-// 22-------------------------------------------------------------------------------------------------
-console.log('22. Write a program that would print out a part of the multiplication table. Get as input the start number and end number. ')
 
-/* 
-const table = []
-
-
-const fnum = parseInt(prompt('Enter start number: '));
-const lnum = parseInt(prompt('Enter end number: ')); 
-
-for (let i = fnum; i <= lnum; i++) {
-
-  let row = []
-
-  for (let j = 1; j <= 10; j++) {
-    row.push((i) * (j));
-  }
-  table.push(row)
-}
-
-for (let i = 0; i < table.length; i++) {
-  let row = table[i]
-  for (let j = 0; j < row.length; j++) {
-    let value = row[j]
-    process.stdout.write(value.toString());
-    process.stdout.write('\t')
-  }
-  console.log()
-}
- */
 
 // 23--------------------------------------------------------------------------------------------------
 
@@ -236,7 +156,7 @@ function createVShape(height) {
 }
 
 createVShape(victoryOutput);
- */
+  */
 // 29
 
 // 30
