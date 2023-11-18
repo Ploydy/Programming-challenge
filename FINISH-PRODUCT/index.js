@@ -46,6 +46,16 @@ for (let i = 2; i <= 100; i += 2) {
 };
 
 
+
+
+
+
+
+
+
+
+
+
 // 2 ----------------------------------------------------------------------------------------------------
 
 console.log('2. Write a program that will compute for and display the sum of the numbers divisible by 3, ranging from 1 to 100.')
@@ -53,6 +63,18 @@ console.log('2. Write a program that will compute for and display the sum of the
 for (let i = 3; i <= 100; i += 3) {
   console.log(' ' + i);
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 3-----------------------------------------------------------------------------------------------------
 
@@ -72,6 +94,57 @@ if (!isNaN(n) && n >= 0) {
   const result = sumOfPowersOf2(n);
   console.log(result);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 5-----------------------------------------------------------------------
+console.log('5. Given an input n assumed one-digit, display a pattern.')
+
+const pyramidOutput = (prompt("Enter a number to make pyramid: "));
+function createPyramidPattern(height) {
+  for (let i = 1; i <= height; i++) { // controls the number of rows in the pyramid base in te heigth parameter
+      let line = ''; // this line initialize as an empty string for each row
+
+      // Add spaces before the numbers
+      for (let space = 1; space <= height - i; space++) { // this line is to add spaces before the numbers of each rows for the pyramid shape
+          line += ' ';
+      }
+
+      // Add numbers and underscores
+      for (let num = 1; num <= i; num++) { // this line adds number and underscores in a sequence to form the pyramid pattern
+          line += num;
+          if (num < i) {
+              line += '_';
+          }
+      }
+
+      console.log(line);
+  }
+}
+
+createPyramidPattern(pyramidOutput);
+
+
+
+
+
+
+
+
+
 
 
 // 6--------------------------------------------------------------------------------------------
@@ -97,6 +170,16 @@ function createVShape(height) {
 createVShape(victoryOutput); // finally this generates the v shave pattern using asterisks with the specific height provided by the user
 
 
+
+
+
+
+
+
+
+
+
+
 // 7--------------------------------------------------------------------------------
 console.log('7. Write a program to display all combinations of A and B (from 1 to 100) that will make the expression false: (5 * A)-(3 * B) > 30 ')
 
@@ -112,6 +195,13 @@ for (let A = 1; A <= 100; A++) { // initiates a loop starts with A as 1 and cont
 
 
 
+
+
+
+
+
+
+
 // 8-----------------------------------------------------------------------------------------------------
 console.log('8. Write a program that reverses an input number.')
 
@@ -121,6 +211,44 @@ let i = prompt('Input value: ')
 const reversedNum = i =>
   parseFloat(i.toString().split('').reverse().join('')) * Math.sign(i)
 console.log(reversedNum(i))
+
+
+
+
+
+
+
+
+
+
+
+// 9-------------------------------------- --------------------------------------------------------------
+console.log('9. Write a program that gets as input a binary number and outputs its corresponding decimal equivalent. Declare your integer variables as long. A long declaration accommodates 8 digits for a number.')
+
+
+function binaryToDecimal(binary) {
+  // Ensure that the binary input is no longer than 8 characters
+  if (binary.length > 8) {
+    return "Binary number is too long. Maximum length is 8 characters.";
+  }
+
+  let decimal = 0; // initialize a variable decimal to store the decimal equivalent of binary number, This variable starts at 0
+
+  for (let i = binary.length - 1, power = 0; i >= 0; i--, power++) { // initializes the loop index i to the last digit || 'power = 0' initializes a power variable to keep track of the power of 2 for each binary digit || the loop continous  as long as i is greater than or equal to 0, decrementing i each time
+    const digit = parseInt(binary[i]); // this digit represents 0 or 1
+    decimal += digit * Math.pow(2, power); // calculates the decimal value by multiplying the current binary digit with 2 raised to the power of its position from the right
+  }
+
+  return decimal; // once all digits have been processed the function returns the calculated decimal equivalent of the binary number
+}
+const binaryNumber = prompt('binary input: ') // this line is to get the user to input a binary number and store the input as binaryNumber
+const decimalEquivalent = binaryToDecimal(binaryNumber); // calls the binarytodecimal function and passes the user provided binarynumber as an argument to calculate its decimal equivalent
+console.log(`Decimal equivalent is: ${decimalEquivalent}`); // finally the calculated decimal equivalent to the console log to display the result
+
+
+
+
+
 
 
 // 10-----------------------------------------------------------------------------------------------------
@@ -144,6 +272,21 @@ function displayEvenNumbers(n) {
 }
 const n = prompt("Enter a value: ");
 displayEvenNumbers(parseInt(n));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 11-----------------------------------------------------------------------------------------------------
@@ -170,6 +313,56 @@ function sumOfEvenAndOddNumbers(n) {
 
 const n = prompt("Enter a number (n):");
 sumOfEvenAndOddNumbers(parseInt(n));
+
+
+
+
+
+
+
+
+
+
+
+
+// 12 ---------------------------------------------------------------------
+console.log('12. Write a program that will compute for ax given real value a and positive integer x')
+
+
+function computePower(a, x) {
+  if (x < 0) {
+    return "x must be a positive integer.";
+  }
+
+  let result = 1;
+
+  for (let i = 1; i <= x; i++) {
+    result *= a;
+  }
+
+  return result;
+}
+
+// Example usage:
+const a = parseFloat(prompt("Enter a value: "));
+const x = parseInt(prompt("Enter a positive integer: "));
+
+if (isNaN(a) || isNaN(x)) {
+  console.log("Please enter valid numeric values.");
+} else {
+  const result = computePower(a, x);
+  console.log(`${a}^${x} = ${result}`);
+}
+
+
+
+
+
+
+
+
+
+
 
 // 15-----------------------------------------------------------------------------------------------------
 console.log('15. Write a program that will display the following: 4, 8, 12, 16, ..., 496')
@@ -256,3 +449,53 @@ for (let i = 0; i < table.length; i++) {
   }
   console.log()
 }
+
+// 26 -----------------------------------------------------------------------------------------------------------------------
+console.log('26. Given an input n assumed one-digit, display a pattern.')
+
+const pyramidOutput = (prompt("Enter a number to make pyramid: "));
+function createPyramidPattern(height) {
+  for (let i = 1; i <= height; i++) { // controls the number of rows in the pyramid base in te heigth parameter
+    let line = ''; // this line initialize as an empty string for each row
+    // Add spaces before the numbers
+    for (let space = 1; space <= height - i; space++) { // this line is to add spaces before the numbers of each rows for the pyramid shape
+      line += '';
+    }
+    // Add numbers and underscores
+    for (let num = 1; num <= i; num++) { // this line adds number and underscores in a sequence to form the pyramid pattern
+      line += num;
+      if (num < i) {
+        line += ' ';
+      }
+    }
+    console.log(line);
+  }
+}
+
+createPyramidPattern(pyramidOutput);
+ 
+
+// 28----------------------------------------------------------------------------------------------------------
+console.log('28. Write a program that will display a pattern depending on n')
+
+const pyramidOutput = (prompt("Enter a number to make pyramid: "));
+
+function createPyramidPattern(height) {
+  for (let i = 1; i <= height; i++) { // controls the number of rows in the pyramid base in te heigth parameter
+      let line = ' '; // this line initialize as an empty string for each row
+
+      // Add spaces before the *
+      for (let space = 1; space <= height - i; space++) { // this line is to add spaces before the numbers of each rows for the pyramid shape
+          line += ' ';
+      }
+      for (let num = 1; num <= i; num++) { // this line adds Add * and sapce in a sequence to form the pyramid pattern
+          line += '*';
+          if (num < i) {
+              line += ' ';
+          }
+      }
+      console.log(line);
+  }
+}
+
+createPyramidPattern(pyramidOutput);
